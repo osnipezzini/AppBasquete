@@ -80,22 +80,16 @@
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="About" Icon="tab_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
-        <ShellContent Title="Browse" Icon="tab_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <ShellContent Title="Inicio" Icon="homePage.png" Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
     </FlyoutItem>
-
-    <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
-    <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
-    </MenuItem>
-
-    <!--
-        This defines content that won't show up in a flyout menu. When this content is active the flyout menu won't be available.
-        This is useful for creating areas of the application where you don't want users to be able to navigate away from.
-        If you would like to navigate to this content you can do so by calling
-        await Shell.Current.GoToAsync("//LoginPage");
-    -->
-    <ShellContent Route="LoginPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:LoginPage}" />
-
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Lista de jogos" Icon="list.png" Route="GameListPage" ContentTemplate="{DataTemplate local:GameListPage}" />
+        <ShellContent Title="Cadastrar jogo" Icon="listAdd.png" Route="GameFormPage" ContentTemplate="{DataTemplate local:GameFormPage}" />
+    </FlyoutItem>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Lista de jogadores" Icon="list.png" Route="PlayerListPage" ContentTemplate="{DataTemplate local:PlayerListPage}" />
+        <ShellContent Title="Cadastrar jogador" Icon="listAdd.png" Route="PlayerFormPage" ContentTemplate="{DataTemplate local:PlayerFormPage}" />
+    </FlyoutItem>
     <!-- Optional Templates 
     // These may be provided inline as below or as separate classes.
 
