@@ -98,7 +98,6 @@ namespace AppBasquete.ViewModels
             }
             
         }
-
         public Player Player { get => player; set => SetProperty(ref player, value); }
         public DateTime Date { get => date; set => SetProperty(ref date, value); }
         public int Placar { get => placar; set => SetProperty(ref placar, value); }

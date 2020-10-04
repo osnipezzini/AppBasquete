@@ -9,6 +9,10 @@ namespace AppBasquete.Droid.Data
     {
         public DatabasePath()
         { }
+        /// <summary>
+        /// Get android database path from personal folder.
+        /// </summary>
+        /// <returns></returns>
         public string GetDbPath()
         {
             return Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "AppBasquete.db");
