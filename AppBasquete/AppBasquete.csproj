@@ -6,6 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Fonts\Montserrat-Bold.ttf" />
+    <None Remove="Assets\Fonts\Montserrat-Light.ttf" />
+    <None Remove="Assets\Fonts\Montserrat-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Fonts\Montserrat-Bold.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\Montserrat-Light.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\Montserrat-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.8" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />  

@@ -8,6 +8,17 @@
     <Application.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">#003664</Color>
+            <Color x:Key="Purple">#623CEA</Color>
+            <Style TargetType="Frame" ApplyToDerivedTypes="True">
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="25"/>
+                <Setter Property="BorderColor" Value="{StaticResource Primary}"/>
+            </Style>
+            <Style TargetType="Label" x:Key="GameList">
+                <Setter Property="FontFamily" Value="MontserratBold" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">

@@ -14,7 +14,6 @@ namespace AppBasquete.ViewModels
     {
         public IDataStore<Player> PlayerStore => DependencyService.Get<IDataStore<Player>>();
         public IDataStore<Game> GamesStore => DependencyService.Get<IDataStore<Game>>();
-        public IDataStore<Item> ItemStore => DependencyService.Get<IDataStore<Item>>();
 
         bool isBusy = false;
         public bool IsBusy

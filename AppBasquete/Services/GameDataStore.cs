@@ -37,7 +37,7 @@ namespace AppBasquete.Services
 
         public async Task<IEnumerable<Game>> GetItemsAsync(bool forceRefresh = false)
         {
-            return await context.Games.ToListAsync();
+            return await context.Games.Include(x => x.Player).ToListAsync();
         }
 
         public async Task<bool> ItemExistsAsync(Game item)

@@ -10,10 +10,18 @@
     <ContentPage.Content>
         <StackLayout Padding="15">
             <Label Text="Nome" HorizontalOptions="CenterAndExpand" />
-            <Entry Text="{Binding Name, Mode=TwoWay}"/>
+            <Frame>
+                <Entry Text="{Binding Name, Mode=TwoWay}"/>
+            </Frame>
+            <Label Text="Time" HorizontalOptions="CenterAndExpand" />
+            <Frame>
+                <Entry Text="{Binding Team, Mode=TwoWay}" />
+            </Frame>
             <Label Text="Nome" HorizontalOptions="CenterAndExpand" />
-            <Entry Text="{Binding Team, Mode=TwoWay}" />
-            <Button Text="Salvar" VerticalOptions="End"/>
+            <Frame>
+                <DatePicker Date="{Binding Birthday, Mode=TwoWay, StringFormat='dd/MM/yyyy'}" />
+            </Frame>
+            <Button Text="Salvar" Command="{Binding SaveCommand}" VerticalOptions="End"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -8,10 +8,21 @@
         <vm:GameFormViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="15">
+            <Label Text="Data do jogo" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+            <Frame>
+                <DatePicker Date="{Binding Date}" HorizontalOptions="CenterAndExpand"/>
+            </Frame>
+            <Label Text="Placar" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+            <Frame>
+                <Entry Text="{Binding Placar}" FontSize="20"/>
+            </Frame>
+            <Frame>
+                <Picker SelectedItem="{Binding Player}" ItemsSource="{Binding Players}"/>
+            </Frame>
+            <Frame VerticalOptions="EndAndExpand" Margin="0, 15">
+                <Button Text="Adicionar jogo" Command="{Binding SaveCommand}"/>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

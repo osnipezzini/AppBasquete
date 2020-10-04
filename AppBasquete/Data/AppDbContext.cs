@@ -8,7 +8,6 @@ namespace AppBasquete.Data
     {
         public DbSet<Game> Games { get; set; }
         public DbSet<Player> Players { get; set; }
-        public DbSet<Item> Items { get; set; }
         public AppDbContext()
         {
             Database.EnsureCreated();

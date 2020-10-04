@@ -9,9 +9,87 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <RefreshView  IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
+             Command="{Binding RefreshCommand}">
+                <CollectionView ItemsSource="{Binding Games}">
+                    <CollectionView.EmptyView>
+                        <StackLayout>
+                            
+                            <Label Text="Sem dados para visualizar."
+                       Margin="10,25,10,10"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                                   VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="10" CornerRadius="0">
+                                <StackLayout>
+                                    <Label Style="{StaticResource GameList}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Data do jogo: " TextColor="{StaticResource Purple}" FontFamily="MontserratBold"/>
+                                                <Span Text="{Binding Date, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Style="{StaticResource GameList}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Nome do jogador: " TextColor="{StaticResource Purple}" FontFamily="MontserratBold"/>
+                                                <Span Text="{Binding Player}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Style="{StaticResource GameList}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Placar: " TextColor="{StaticResource Purple}" FontFamily="MontserratBold"/>
+                                                <Span Text="{Binding Placar}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Style="{StaticResource GameList}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Recorde máximo atual: " TextColor="{StaticResource Purple}" FontFamily="MontserratBold"/>
+                                                <Span Text="{Binding MaxRecord}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Style="{StaticResource GameList}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Recorde mínimo atual: " TextColor="{StaticResource Purple}" FontFamily="MontserratBold"/>
+                                                <Span Text="{Binding MinRecord}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Style="{StaticResource GameList}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Quebras do recorde mínimo: " TextColor="{StaticResource Purple}" FontFamily="MontserratBold"/>
+                                                <Span Text="{Binding MinRecordBroken}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Style="{StaticResource GameList}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Quebras do recorde máximo: " TextColor="{StaticResource Purple}" FontFamily="MontserratBold"/>
+                                                <Span Text="{Binding MaxRecordBroken}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

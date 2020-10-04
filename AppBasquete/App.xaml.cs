@@ -10,7 +10,6 @@ namespace AppBasquete
         {
             InitializeComponent();
 
-            DependencyService.Register<DbDataStore>();
             DependencyService.Register<PlayerDataStore>();
             DependencyService.Register<GameDataStore>();
             MainPage = new AppShell();
